@@ -1,0 +1,101 @@
+model,prompt,text,sentiment,score,score_accuracy_points,score_accuracy_pct
+qwen2.5:7b-instruct-q4_K_M,original,"Der Termin war super organisiert, das Auto ist top gepflegt!",positive,10,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,original,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negative,1,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,original,Können Sie mir den Ölwechsel-Termin für nächsten Dienstag bestätigen?,neutral,5,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,original,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positive,10,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,original,"Die Rechnung ist viel zu hoch, das ist Wucher!",negative,1,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,original,Ich habe eine Frage zur Garantie meines Audi.,neutral,5,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,original,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+qwen2.5:7b-instruct-q4_K_M,original,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negative,1,0.8,80.0
+qwen2.5:7b-instruct-q4_K_M,original,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,original,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positive,10,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,original,"Der Termin war super organisiert, das Auto ist top gepflegt!",positive,10,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,original,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negative,2,0.9,90.0
+ministral-3:8b-instruct-2512-q4_K_M,original,Können Sie mir den Ölwechsel-Termin für nächsten Dienstag bestätigen?,neutral,5,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,original,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positive,10,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,original,"Die Rechnung ist viel zu hoch, das ist Wucher!",negative,2,0.9,90.0
+ministral-3:8b-instruct-2512-q4_K_M,original,Ich habe eine Frage zur Garantie meines Audi.,neutral,5,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,original,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+ministral-3:8b-instruct-2512-q4_K_M,original,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negative,2,0.9,90.0
+ministral-3:8b-instruct-2512-q4_K_M,original,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,original,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positive,10,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,original,"Der Termin war super organisiert, das Auto ist top gepflegt!",positive,10,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,original,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negative,1,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,original,Können Sie mir den Ölwechsel-Termin für nächsten Dienstag bestätigen?,neutral,5,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,original,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positive,10,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,original,"Die Rechnung ist viel zu hoch, das ist Wucher!",negative,1,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,original,Ich habe eine Frage zur Garantie meines Audi.,neutral,5,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,original,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+llama3.1:8b-instruct-q4_K_S,original,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negative,1,0.8,80.0
+llama3.1:8b-instruct-q4_K_S,original,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,original,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positive,10,1.0,100.0
+llama3.2:latest,original,"Der Termin war super organisiert, das Auto ist top gepflegt!",positive,10,1.0,100.0
+llama3.2:latest,original,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negative,4,0.7,70.0
+llama3.2:latest,original,Können Sie mir den Ülwechsel-Termin für nächsten Dienstag bestütigen?,neutral,5,1.0,100.0
+llama3.2:latest,original,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positive,10,1.0,100.0
+llama3.2:latest,original,"Die Rechnung ist viel zu hoch, das ist Wucher!",negative,9,0.19999999999999996,19.999999999999996
+llama3.2:latest,original,Ich habe eine Frage zur Garantie meines Audi.,neutral,5,1.0,100.0
+llama3.2:latest,original,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+llama3.2:latest,original,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negative,4,0.9,90.0
+llama3.2:latest,original,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+llama3.2:latest,original,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positive,10,1.0,100.0
+gpt-oss:20b,original,"Der Termin war super organisiert, das Auto ist top gepflegt!",positive,10,1.0,100.0
+gpt-oss:20b,original,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negative,2,0.9,90.0
+gpt-oss:20b,original,Können Sie mir den Ölwechsel-Termin für nächsten Dienstag bestätigen?,neutral,5,1.0,100.0
+gpt-oss:20b,original,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positive,10,1.0,100.0
+gpt-oss:20b,original,"Die Rechnung ist viel zu hoch, das ist Wucher!",negative,1,1.0,100.0
+gpt-oss:20b,original,Ich habe eine Frage zur Garantie meines Audi.,neutral,5,1.0,100.0
+gpt-oss:20b,original,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+gpt-oss:20b,original,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negative,2,0.9,90.0
+gpt-oss:20b,original,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+gpt-oss:20b,original,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positive,10,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,optimized,"Der Termin war super organisiert, das Auto ist top gepflegt!",positive,10,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,optimized,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negative,2,0.9,90.0
+qwen2.5:7b-instruct-q4_K_M,optimized,Können Sie mir den Ölwechsel-Termin für nächsten Dienstag bestätigen?,error,0,0.0,0.0
+qwen2.5:7b-instruct-q4_K_M,optimized,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positive,10,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,optimized,"Die Rechnung ist viel zu hoch, das ist Wucher!",negative,1,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,optimized,Ich habe eine Frage zur Garantie meines Audi.,error,0,0.0,0.0
+qwen2.5:7b-instruct-q4_K_M,optimized,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+qwen2.5:7b-instruct-q4_K_M,optimized,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negative,2,0.9,90.0
+qwen2.5:7b-instruct-q4_K_M,optimized,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+qwen2.5:7b-instruct-q4_K_M,optimized,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positive,10,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,"Der Termin war super organisiert, das Auto ist top gepflegt!",positive,10,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negative,3,0.8,80.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,Können Sie mir den Ölwechsel-Termin für nächsten Dienstag bestätigen?,neutral,5,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positive,10,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,"Die Rechnung ist viel zu hoch, das ist Wucher!",negative,1,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,Ich habe eine Frage zur Garantie meines Audi.,neutral,5,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negative,8,0.5,50.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+ministral-3:8b-instruct-2512-q4_K_M,optimized,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positive,10,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,optimized,"Der Termin war super organisiert, das Auto ist top gepflegt!",positive,10,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,optimized,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negative,1,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,optimized,Können Sie mir den Ölwechsel-Termin für nächsten Dienstag bestätigen?,neutral,5,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,optimized,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positive,10,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,optimized,"Die Rechnung ist viel zu hoch, das ist Wucher!",negative,1,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,optimized,Ich habe eine Frage zur Garantie meines Audi.,neutral,5,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,optimized,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+llama3.1:8b-instruct-q4_K_S,optimized,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negative,1,0.8,80.0
+llama3.1:8b-instruct-q4_K_S,optimized,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+llama3.1:8b-instruct-q4_K_S,optimized,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positive,10,1.0,100.0
+llama3.2:latest,optimized,"Der Termin war super organisiert, das Auto ist top gepflegt!",positiv,10,1.0,100.0
+llama3.2:latest,optimized,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negativ,9,0.19999999999999996,19.999999999999996
+llama3.2:latest,optimized,Können Sie mir den Ölwechsel-Termin für nächsten Dienstag bestôgen?,neutral,5,1.0,100.0
+llama3.2:latest,optimized,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positiv,10,1.0,100.0
+llama3.2:latest,optimized,"Die Rechnung ist viel zu hoch, das ist Wucher!",negativ,10,0.09999999999999998,9.999999999999998
+llama3.2:latest,optimized,Ich habe eine Frage zur Garantie meines Audi.,neutral,5,1.0,100.0
+llama3.2:latest,optimized,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+llama3.2:latest,optimized,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negativ,9,0.4,40.0
+llama3.2:latest,optimized,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+llama3.2:latest,optimized,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positiv,10,1.0,100.0
+gpt-oss:20b,optimized,"Der Termin war super organisiert, das Auto ist top gepflegt!",positive,10,1.0,100.0
+gpt-oss:20b,optimized,"Das Wartezeit war ewig lang, ich warte nie wieder so lange.",negative,2,0.9,90.0
+gpt-oss:20b,optimized,Können Sie mir den Ölwechsel-Termin für nächsten Dienstag bestätigen?,neutral,5,1.0,100.0
+gpt-oss:20b,optimized,"Toller Service! Mein BMW läuft wieder wie neu, danke!",positive,10,1.0,100.0
+gpt-oss:20b,optimized,"Die Rechnung ist viel zu hoch, das ist Wucher!",negative,10,0.09999999999999998,9.999999999999998
+gpt-oss:20b,optimized,Ich habe eine Frage zur Garantie meines Audi.,neutral,5,1.0,100.0
+gpt-oss:20b,optimized,Freundliches Team und schnelle Abwicklung – empfehle ich weiter!,positive,10,0.9,90.0
+gpt-oss:20b,optimized,"Der Mechaniker hat mein Auto nicht richtig repariert, es quietscht immer noch.",negative,3,1.0,100.0
+gpt-oss:20b,optimized,Bitte senden Sie mir die Rechnungsübersicht per E-Mail.,neutral,5,1.0,100.0
+gpt-oss:20b,optimized,"Absolut fantastisch! Neues Auto abgeholt, alles perfekt vorbereitet.",positive,10,1.0,100.0
