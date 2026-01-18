@@ -11,26 +11,31 @@ Automated LLM benchmark for dealership customer message sentiment analysis. Comp
 - CSV export for further analysis
 - Robust error handling and progress tracking
 
-## Example Output
+## LLM Comparison (All Prompts)
 
-=== LLM COMPARISON (all prompts) ===
-gpt-oss:20b                         | optimized    = 89.00%
-gpt-oss:20b                         | original     = 97.00%
-llama3.1:8b-instruct-q4_K_S         | optimized    = 97.00%
-llama3.1:8b-instruct-q4_K_S         | original     = 97.00%
-llama3.2:latest                     | optimized    = 76.00%
-llama3.2:latest                     | original     = 87.00%
-ministral-3:8b-instruct-2512-q4_K_M | optimized    = 92.00%
-ministral-3:8b-instruct-2512-q4_K_M | original     = 96.00%
-qwen2.5:7b-instruct-q4_K_M          | optimized    = 77.00%
-qwen2.5:7b-instruct-q4_K_M          | original     = 97.00%
+| Model                              | Prompt    | Accuracy |
+|------------------------------------|-----------|----------|
+| gpt-oss:20b                        | optimized | 89.00%   |
+| gpt-oss:20b                        | original  | 97.00%   |
+| llama3.1:8b-instruct-q4_K_S        | optimized | 97.00%   |
+| llama3.1:8b-instruct-q4_K_S        | original  | 97.00%   |
+| llama3.2:latest                    | optimized | 76.00%   |
+| llama3.2:latest                    | original  | 87.00%   |
+| ministral-3:8b-instruct-2512-q4_K_M| optimized | 92.00%   |
+| ministral-3:8b-instruct-2512-q4_K_M| original  | 96.00%   |
+| qwen2.5:7b-instruct-q4_K_M         | optimized | 77.00%   |
+| qwen2.5:7b-instruct-q4_K_M         | original  | 97.00%   |
 
-=== TOP 5 COMBINATIONS ===
-🏅 gpt-oss:20b                         | original     = 97.00%
-🏅 llama3.1:8b-instruct-q4_K_S         | optimized    = 97.00%
-🏅 llama3.1:8b-instruct-q4_K_S         | original     = 97.00%
-🏅 qwen2.5:7b-instruct-q4_K_M          | original     = 97.00%
-🏅 ministral-3:8b-instruct-2512-q4_K_M | original     = 96.00%
+## Top 5 Combinations
+
+| Rank | Model                              | Prompt    | Accuracy |
+|------|------------------------------------|-----------|----------|
+| 🥇   | gpt-oss:20b                        | original  | 97.00%   |
+| 🥈   | llama3.1:8b-instruct-q4_K_S        | optimized | 97.00%   |
+| 🥉   | llama3.1:8b-instruct-q4_K_S        | original  | 97.00%   |
+| 4    | qwen2.5:7b-instruct-q4_K_M         | original  | 97.00%   |
+| 5    | ministral-3:8b-instruct-2512-q4_K_M| original  | 96.00%   |
+
 
 
 ## Quickstart
@@ -60,12 +65,12 @@ python sentiment_benchmark.py
 
 ### File Structure
 sentiment-benchmark/
-├── sentiment.xlsx
-├── sentiment_benchmark.py
-├── sentiment_results.csv
-├── README.md
-├── .gitignore
-└── .env -> Ollama do not need an API key. If you work with other providers, you can add your API key here.
+├── sentiment.xlsx # Input: Customer texts + human scores
+├── sentiment_benchmark.py # Main benchmark script
+├── sentiment_results.csv # Output: Complete results
+├── README.md # Project documentation
+├── .gitignore # Git exclusions
+└── .env # Environment variables (optional) - Ollama do not need an API key. If you work with other providers, you can add your API key here.
 
 ### Configuation
 ```python
