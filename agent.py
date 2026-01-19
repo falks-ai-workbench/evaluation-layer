@@ -4,7 +4,7 @@ import pandas as pd
 from typing import List, Dict, Union, Tuple
 from dataclasses import dataclass
 from enum import Enum
-
+import time
 
 # === CONFIGURATION ===
 @dataclass
@@ -12,25 +12,22 @@ class Config:
     excel_path: str = 'sentiment.xlsx'
     output_csv: str = 'sentiment_results.csv'
     llms: List[str] = None
-    prompt_version: str = "Prompt Version 1"
 
     def __post_init__(self):
         if self.llms is None:
             self.llms = [
-                "qwen2.5:7b-instruct-q4_K_M",
-                "ministral-3:8b-instruct-2512-q4_K_M", 
-                "llama3.1:8b-instruct-q4_K_S",
+                "qwen2.5:7b-instruct-q4_K_M",        # Schnellstes zuerst
+                "llama3.1:8b-instruct-q4_K_S", 
                 "llama3.2:latest",
+                "ministral-3:8b-instruct-2512-q4_K_M", 
                 "gpt-oss:20b"
             ]
-
 
 class PromptVersion(Enum):
     ORIGINAL = "original"
     OPTIMIZED = "optimized"
 
-
-# === BOTH PROMPTS ===
+# === BEWAHRTE PROMPTS (deine Originale) ===
 PROMPTS = {
     PromptVersion.ORIGINAL: """You are a sentiment analysis bot for customer messages in a car dealership.
 Task:
@@ -70,7 +67,6 @@ Rules:
 2. Always respond in German.
 3. On problems: return empty object."""
 }
-
 
 # === CORE LOGIC ===
 class SentimentAnalyzer:
@@ -132,7 +128,6 @@ class SentimentAnalyzer:
                 "sentiment": "error", "score": 0, "score_accuracy_points": 0, "score_accuracy_pct": 0
             }
 
-
 def load_data(path: str) -> Tuple[pd.Series, pd.Series]:
     """Loads and cleans Excel data."""
     df = pd.read_excel(path)
@@ -140,63 +135,62 @@ def load_data(path: str) -> Tuple[pd.Series, pd.Series]:
     df = df.drop('Nr.', axis=1)
     return df['Kundennachricht'].reset_index(drop=True), df['score_human'].reset_index(drop=True)
 
-
 def print_model_comparison(df: pd.DataFrame):
     """Extended evaluation with prompt comparison."""
     print("\n=== LLM COMPARISON (all prompts) ===")
     
-    # Per model + prompt
     model_prompt_accuracy = df.groupby(['model', 'prompt'])['score_accuracy_points'].mean()
     for (model, prompt), acc in model_prompt_accuracy.items():
         print(f"{model:<30} | {prompt:<12} = {acc:.2%}")
     
-    # Top 5 combinations
     print("\n=== TOP 5 COMBINATIONS ===")
     top5 = df.groupby(['model', 'prompt'])['score_accuracy_points'].mean().nlargest(5)
     for (model, prompt), acc in top5.items():
         print(f"🏅 {model:<30} | {prompt:<12} = {acc:.2%}")
     
-    # Summary table
     summary = df.groupby(['model', 'prompt'])['score_accuracy_points'].agg(['mean', 'count'])
     summary['mean_pct'] = (summary['mean'] * 100).round(1)
     print("\n=== FULL STATISTICS ===")
     print(summary[['mean_pct', 'count']])
 
-
-# === ENTRY POINT ===
+# === ENTRY POINT (DEIN OPTIMIERTER WUNSCH) ===
 def main():
     config = Config()
     
-    # Load data
     print("📊 Loading data...")
     texts, human_scores = load_data(config.excel_path)
     print(f"✅ {len(texts)} texts loaded")
     
-    # Initialize client
     client = OpenAI(base_url='http://localhost:11434/v1', api_key='ollama')
     analyzer = SentimentAnalyzer(client)
     
-    # Run both prompts
     results = []
-    for prompt_version in PromptVersion:
-        print(f"\n{'='*60}")
-        print(f"🔄 PROMPT: {prompt_version.value.upper()}")
-        print(f"{'='*60}")
+
+    for model in config.llms:
+        start_time = time.time()
+        print(f"\n{'='*80}")
+        print(f"🚀 TESTING MODEL: {model}")
+        print(f"{'='*80}")
         
-        for model in config.llms:
-            print(f"\n--- {model} ---")
+        # BEIDE PROMPTS pro Modell (DEIN WUNSCH!)
+        for prompt_version in PromptVersion:
+            print(f"\n🔄 PROMPT: {prompt_version.value.upper()}")
+            print(f"{'='*60}")
+            
+            # OPTIMIERTE SEQUENTIELLE AUSFÜHRUNG
             for text, human_score in zip(texts, human_scores):
                 result = analyzer.analyze(model, text, human_score, prompt_version)
-                print(f"  {result['score']} ({result['sentiment']}) | Accuracy: {result['score_accuracy_pct']:.0f}%")
+                print(f"  Score: {result['score']} | Sentiment: ({result['sentiment']}) | Accuracy: {result['score_accuracy_pct']:.0f}%")
                 results.append(result)
+        
+        end_time = time.time()
+        print(f"⏱️  {model}: {end_time-start_time:.1f}s")
     
-    # Save and evaluate results
     df_results = pd.DataFrame(results)
     df_results.to_csv(config.output_csv, index=False)
     print(f"\n💾 Results saved: {config.output_csv}")
     
     print_model_comparison(df_results)
-
 
 if __name__ == "__main__":
     main()
